@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: lyre-tutor-api
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /health
+    envVars:
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: API_SECRET
+        sync: false
+      - key: MODEL_NAMES
+        value: gemini-3.5-flash-lite,gemini-3.1-flash-lite

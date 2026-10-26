@@ -1,0 +1,9 @@
+fastapi
+uvicorn[standard]
+python-multipart
+numpy
+librosa
+langchain
+langchain-core
+langgraph
+langchain-google-genai
